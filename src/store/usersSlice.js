@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
   async () => {
-    const response = await axios.get('/api/users');
+    const response = await axios.get('http://next.goowrite.com/api/users');
     return response.data;
   }
 );
@@ -12,7 +12,7 @@ export const fetchUsers = createAsyncThunk(
 export const createUser = createAsyncThunk(
   'users/createUser',
   async (userData) => {
-    const response = await axios.post('/api/users', userData);
+    const response = await axios.post('http://next.goowrite.com/api/users', userData);
     return response.data;
   }
 );
@@ -20,7 +20,7 @@ export const createUser = createAsyncThunk(
 export const updateUser = createAsyncThunk(
   'users/updateUser',
   async ({ id, userData }) => {
-    const response = await axios.put(`/api/users/${id}`, userData);
+    const response = await axios.put(`http://next.goowrite.com/api/users/${id}`, userData);
     return response.data;
   }
 );
@@ -28,7 +28,7 @@ export const updateUser = createAsyncThunk(
 export const deleteUser = createAsyncThunk(
   'users/deleteUser',
   async (id) => {
-    await axios.delete(`/api/users/${id}`);
+    await axios.delete(`http://next.goowrite.com/api/users/${id}`);
     return id;
   }
 );
